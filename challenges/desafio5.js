@@ -7,20 +7,20 @@ db.comments.aggregate([
   {
     $lookup: {
       from: 'movies',
-      localField: '_id',
-      foreignField: 'movie_id',
+      localField: 'movie_id',
+      foreignField: '_id',
       as: 'movie'
     }
   },
-  { $unwind: '$movie.genres' },
   { $unwind: '$movie' },
+  { $unwind: '$movie.genres' },
   {
     $group: {
       _id: '$movie.genres',
       qtdFilmes: { $sum: 1 }
     }
   },
-  { $limit: 1 },
-  { $project: { genero: '$movie.genres', total: '$qtdFilmes' } }
   { $sort: { qtdFilmes: -1 } },
+  { $limit: 1 },
+  { $project: { _id: false, genero: '$_id', total: '$qtdFilmes' } },
 ]);

@@ -8,7 +8,8 @@ db.movies.aggregate([
       countries: 'New Zealand'
     }
   },
-  { $sort: { runtime: 1 } },
-  { $unwind: 'cast' },
-  { $project: { _id: false, nome: 'cast' } }
+  { $sort: { runtime: -1 } },
+  { $limit: 1 },
+  { $unwind: '$cast' },
+  { $project: { _id: false, nome: '$cast' } }
 ]);
