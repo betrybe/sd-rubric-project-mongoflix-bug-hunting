@@ -1,0 +1,39 @@
+{
+  "requirements": [
+    {
+      "identifier": "desafio1",
+      "description": "1 - A partir da coleção movies, retornar os 10 diretores com a maior quantidade de filmes ordenados pela quantidade e em caso de empate por nome na ordem alfabética.",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio2",
+      "description": "2 - Traga a média de `imdb.rating` (arredondando para 1 casa decimal), a somatória de `imdb.votes` e a quantidade dos filmes de drama lançados no ano de 1984. ",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio3",
+      "description": "3 - Liste os atores do filme de maior duração do ano de 2001 no seguinte padrão.",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio4",
+      "description": "4 - Liste os filmes que tem mais de 150 comentários ordenando pelo número de comentários de forma descrescente e pelo título de forma alfabética.",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio5",
+      "description": "5 - Descubra qual o gênero de filme que o usuário `Petyr Baelish` mais fez comentários.",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio6",
+      "description": "6 - Liste os países que tiveram séries nomeadas ao Oscar no ano de 2015 no seguinte formato.",
+      "bonus": false
+    },
+    {
+      "identifier": "desafio7",
+      "description": "7 - Liste o filme que mais ganhou Oscar em 2003 no seguinte formato.",
+      "bonus": false
+    }
+  ]
+}
