@@ -8,13 +8,16 @@ db.movies.aggregate([
       genres: 'Drama'
     }
   },
+  { $unwind: '$genres' },
   {
     $group: {
-      _id: '$_id',
+      _id: '$genres',
       total: { $sum: 1 },
-      mediaIMDB: { $avg: 'imdb.rating' },
-      votosIMDB: { $sum: 'imdb.votes' }
+      mediaIMDB: { $avg: '$imdb.rating' },
+      votosIMDB: { $sum: '$imdb.votes' }
     }
   },
-  { $project: { total: '$total', mediaIMDB: { $ceil: '$mediaIMDB' }, votosIMDB: '$votosIMDB' } }
+  { $project: { _id: false, total: '$total', genres: true, mediaIMDB: { $round: ['$mediaIMDB', 1] }, votosIMDB: '$votosIMDB' } },
+  { $sort: { total: -1 } },
+  { $limit: 1 }
 ]);

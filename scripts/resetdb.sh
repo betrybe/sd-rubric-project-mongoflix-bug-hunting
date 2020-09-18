@@ -14,13 +14,13 @@ DB_RESTORE_DIR=$1
 scripts/join_splitted_files.sh "$DB_RESTORE_DIR"
 
 # Extract BSON's
-# for assetDirectory in "$DB_RESTORE_DIR"/*/
-# do
-#     for compressedFile in "$assetDirectory"*.tar.gz
-#     do
-#         tar -xvf "$compressedFile" -C "$assetDirectory"
-#     done
-# done
+for assetDirectory in "$DB_RESTORE_DIR"/*/
+do
+    for compressedFile in "$assetDirectory"*.tar.gz
+    do
+        tar -xvf "$compressedFile" -C "$assetDirectory"
+    done
+done
 
 # Restore collections
 for entry in "$DB_RESTORE_DIR"/*/*.bson
