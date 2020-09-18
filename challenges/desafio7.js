@@ -5,8 +5,7 @@ db.movies.aggregate([
       released: {
         $gte: ISODate('2003-01-01'),
         $lte: ISODate('2003-12-31')
-
-      },
+      }
     }
   },
   { $addFields: { regexAwards: { $regexFind: { input: "$awards.text", regex: /Won (\w+) oscar/i } } } },
